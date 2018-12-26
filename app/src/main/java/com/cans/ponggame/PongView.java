@@ -11,12 +11,15 @@ class PongView extends SurfaceView implements Runnable {
 
     private final SurfaceHolder holder;
     private final Thread drawingThread;
+    private final PongGame pongGame;
 
-    public PongView(Context context) {
+    public PongView(Context context, int width, int height) {
         super(context);
 
         holder = getHolder();
         drawingThread = new Thread(this);
+
+        pongGame = new PongGame(width, height);
 
         drawingThread.start();
     }
