@@ -6,6 +6,11 @@ class PongRect {
     private final int right;
     private final int bottom;
 
+    int getLeft() {return left;}
+    int getRight() {return right;}
+    int getTop() {return top;}
+    int getBottom() {return bottom;}
+
     public PongRect(int left, int top, int right, int bottom) {
         this.left = left;
         this.top = top;

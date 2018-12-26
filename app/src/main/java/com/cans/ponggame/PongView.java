@@ -3,6 +3,7 @@ package com.cans.ponggame;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -46,6 +47,11 @@ class PongView extends SurfaceView implements Runnable {
             Canvas canvas = holder.lockCanvas();
 
             canvas.drawColor(Color.argb(255, 120, 197, 87));
+
+            PongRect batRect = this.pongGame.getBatRect();
+            Paint red = new Paint();
+            red.setColor(Color.argb(255, 255,0,0));
+            canvas.drawRect(batRect.getLeft(), batRect.getTop(), batRect.getRight(), batRect.getBottom(), red);
 
             holder.unlockCanvasAndPost(canvas);
         }
