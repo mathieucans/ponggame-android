@@ -18,4 +18,8 @@ class PongGame {
     public PongRect getBatRect() {
         return batRect;
     }
+
+    public void SetBatPos(float x) {
+        batRect = new PongRect((int) x, batRect.getTop(), (int)x +100, batRect.getBottom());
+    }
 }

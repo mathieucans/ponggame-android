@@ -21,7 +21,7 @@ public class PongActivity extends AppCompatActivity {
         display.getSize(size);
 
         // Initialize pongView and set it as the view
-        view = new PongView(this, size.x, size.y);
+        view = new PongView(this, size.x, size.y-200);
 
         setContentView(view);
     }

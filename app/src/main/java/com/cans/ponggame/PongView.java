@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
@@ -20,7 +21,7 @@ class PongView extends SurfaceView implements Runnable {
         holder = getHolder();
         drawingThread = new Thread(this);
 
-        pongGame = new PongGame(width, height-200);
+        pongGame = new PongGame(width, height);
 
         drawingThread.start();
     }
@@ -40,6 +41,20 @@ class PongView extends SurfaceView implements Runnable {
             }
         }
     }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+
+        switch (motionEvent.getAction() & MotionEvent.ACTION_MASK)
+        {
+            case MotionEvent.ACTION_DOWN:
+            case MotionEvent.ACTION_MOVE:
+                pongGame.SetBatPos(motionEvent.getX());
+                break;
+        }
+        return true;
+    }
+
 
     private void draw() {
         if (holder.getSurface().isValid())
