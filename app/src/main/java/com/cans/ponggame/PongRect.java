@@ -11,6 +11,13 @@ class PongRect {
     int getTop() {return top;}
     int getBottom() {return bottom;}
 
+    @Override
+    public String toString()
+    {
+        return String.format("%d %d %d %d", left, top, right, bottom);
+    }
+
+
     public PongRect(int left, int top, int right, int bottom) {
         this.left = left;
         this.top = top;

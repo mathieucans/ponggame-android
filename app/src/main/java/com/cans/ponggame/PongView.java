@@ -20,7 +20,7 @@ class PongView extends SurfaceView implements Runnable {
         holder = getHolder();
         drawingThread = new Thread(this);
 
-        pongGame = new PongGame(width, height);
+        pongGame = new PongGame(width, height-200);
 
         drawingThread.start();
     }
