@@ -8,13 +8,13 @@ class PongGame {
     private final Ball ball;
     private PongRect batRect;
 
-    public PongGame(int width, int height) {
+    public PongGame(int width, int height, Ball ball) {
 
         this.width = width;
         this.height = height;
         batRect = new PongRect((width- BAT_WIDTH)/2, height - BAT_HEIGHT -5, (width- BAT_WIDTH)/2 + BAT_WIDTH, height-5);
 
-        ball = new Ball(width/3 , height/3, new Speed(10,5));
+        this.ball = ball;
 
     }
 
@@ -31,6 +31,25 @@ class PongGame {
     }
 
     public void update() {
-        ball.Update(batRect, new PongRect(0,0,width, height));
+        PongRect gameBounds = new PongRect(0, 0, width, height);
+
+        Speed speed = ball.getSpeed();
+        if (ball.getRect().getRight() >= gameBounds.getRight()   )
+        {
+            speed = new Speed(-speed.getX(), speed.getY());
+        }
+
+        if (ball.getRect().getLeft() <= gameBounds.getLeft()   )
+        {
+            speed = new Speed(-speed.getX(), speed.getY());
+        }
+
+        if (ball.getRect().getTop() <= gameBounds.getTop()   )
+        {
+            speed = new Speed(speed.getX(), -speed.getY());
+        }
+        ball.setSpeed(speed);
+
+        ball.Update(batRect, gameBounds);
     }
 }

@@ -23,22 +23,15 @@ class Ball {
             speed = new Speed(speed.getX(), -speed.getY());
         }
 
-        if (getRect().getRight() >= gameBounds.getRight()   )
-        {
-            speed = new Speed(-speed.getX(), speed.getY());
-        }
-
-        if (getRect().getLeft() <= gameBounds.getLeft()   )
-        {
-            speed = new Speed(-speed.getX(), speed.getY());
-        }
-
-        if (getRect().getTop() <= gameBounds.getTop()   )
-        {
-            speed = new Speed(speed.getX(), -speed.getY());
-        }
-
         x = x + speed.getX();
         y = y+ speed.getY();
+    }
+
+    public Speed getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(Speed speed) {
+        this.speed = speed;
     }
 }
