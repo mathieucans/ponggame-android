@@ -14,7 +14,7 @@ class PongRect {
     @Override
     public String toString()
     {
-        return String.format("%d %d %d %d", left, top, right, bottom);
+        return String.format("%f %f %f %f", left, top, right, bottom);
     }
 
 
