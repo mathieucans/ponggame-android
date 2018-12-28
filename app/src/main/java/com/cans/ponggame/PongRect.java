@@ -37,4 +37,8 @@ class PongRect {
                 && otherRect.top == top;
 
     }
+
+    public PongRect translate(int x, int y) {
+        return new PongRect(left + x, top + y, right+x, bottom+y);
+    }
 }

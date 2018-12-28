@@ -32,10 +32,12 @@ class PongView extends SurfaceView implements Runnable {
     {
         while (!Thread.currentThread().isInterrupted())
         {
+            pongGame.update();
+
             draw();
 
             try {
-                Thread.sleep(100);
+                Thread.sleep(50);
             } catch (InterruptedException e) {
                 Log.i(VIEW_LOG_TAG,"sleep interrupt");
             }

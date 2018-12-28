@@ -23,6 +23,20 @@ public class PongGameTest {
 
         PongRect ballRect = pongGame.getBallRect();
 
-        Assert.assertEquals(ballRect, new PongRect (100,33,110, 40));
+        Assert.assertEquals(ballRect, new PongRect (100,33,110, 43));
     }
+
+    @Test
+    public void after_an_update_the_ball_move_according_to_its_speed_vector()
+    {
+        PongGame pongGame = new PongGame(300, 100);
+
+        pongGame.update();
+
+        PongRect ballRect = pongGame.getBallRect();
+
+        // speed 5,3
+        Assert.assertEquals(ballRect, new PongRect (110,38,120, 48));
+    }
+
 }

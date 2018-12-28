@@ -31,4 +31,8 @@ class PongGame {
     public PongRect getBallRect() {
         return ballRect;
     }
+
+    public void update() {
+        ballRect = ballRect.translate(10,5);
+    }
 }
