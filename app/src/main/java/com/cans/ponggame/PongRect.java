@@ -1,15 +1,15 @@
 package com.cans.ponggame;
 
 class PongRect {
-    private final int left;
-    private final int top;
-    private final int right;
-    private final int bottom;
+    private final float left;
+    private final float top;
+    private final float right;
+    private final float bottom;
 
-    int getLeft() {return left;}
-    int getRight() {return right;}
-    int getTop() {return top;}
-    int getBottom() {return bottom;}
+    float getLeft() {return left;}
+    float getRight() {return right;}
+    float getTop() {return top;}
+    float getBottom() {return bottom;}
 
     @Override
     public String toString()
@@ -18,7 +18,7 @@ class PongRect {
     }
 
 
-    public PongRect(int left, int top, int right, int bottom) {
+    public PongRect(float left, float top, float right, float bottom) {
         this.left = left;
         this.top = top;
         this.right = right;
@@ -38,7 +38,7 @@ class PongRect {
 
     }
 
-    public PongRect translate(int x, int y) {
+    public PongRect translate(float x, float y) {
         return new PongRect(left + x, top + y, right+x, bottom+y);
     }
 }
