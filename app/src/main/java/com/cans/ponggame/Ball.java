@@ -17,7 +17,11 @@ class Ball {
         return new PongRect(x, y, x +BALL_SIZE, y+ BALL_SIZE);
     }
 
-    public void Update() {
+    public void Update(PongRect batRect) {
+        if (getRect().isIntersect(batRect))
+        {
+            speed = new Speed(speed.getX(), -speed.getY());
+        }
         x = x + speed.getX();
         y = y+ speed.getY();
     }

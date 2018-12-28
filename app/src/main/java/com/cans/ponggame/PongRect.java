@@ -41,4 +41,8 @@ class PongRect {
     public PongRect translate(float x, float y) {
         return new PongRect(left + x, top + y, right+x, bottom+y);
     }
+
+    public boolean isIntersect(PongRect other) {
+        return !(right<other.left || other.right<left || bottom<other.top || other.bottom<top);
+    }
 }

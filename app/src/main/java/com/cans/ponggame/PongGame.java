@@ -1,9 +1,5 @@
 package com.cans.ponggame;
 
-import android.graphics.Rect;
-
-import java.util.Vector;
-
 class PongGame {
     public static final int BAT_WIDTH = 100;
     public static final int BAT_HEIGHT = 10;
@@ -35,6 +31,6 @@ class PongGame {
     }
 
     public void update() {
-        ball.Update();
+        ball.Update(batRect);
     }
 }
