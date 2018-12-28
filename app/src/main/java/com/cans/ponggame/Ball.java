@@ -17,14 +17,16 @@ class Ball {
         return new PongRect(x, y, x +BALL_SIZE, y+ BALL_SIZE);
     }
 
-    public void Update(PongRect batRect, PongRect gameBounds) {
-        if (getRect().isIntersect(batRect))
+    public boolean update(PongRect batRect) {
+        boolean intersectBat = getRect().isIntersect(batRect);
+        if (intersectBat)
         {
-            speed = new Speed(speed.getX(), -speed.getY());
+            speed = new Speed(1.1F*speed.getX(), -1.1F*speed.getY());
         }
 
         x = x + speed.getX();
         y = y+ speed.getY();
+        return intersectBat;
     }
 
     public Speed getSpeed() {

@@ -10,8 +10,6 @@ import static org.junit.Assert.assertEquals;
 
 public class PongGameTest {
 
-    public static final PongRect BAT_RECT = new PongRect(10, 100, 110, 110);
-
     @NonNull
     private PongGame Create(Ball ball) {
         return new PongGame(400, 400, ball);
@@ -64,4 +62,7 @@ public class PongGameTest {
 
         assertEquals(new PongRect(55, 5, 65, 15), pongGame.getBallRect());
     }
+
+
+    public static final PongRect BAT_RECT = new PongRect(150,385,250, 395);
 }

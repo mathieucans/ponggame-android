@@ -50,6 +50,6 @@ class PongGame {
         }
         ball.setSpeed(speed);
 
-        ball.Update(batRect, gameBounds);
+        ball.update(batRect);
     }
 }
