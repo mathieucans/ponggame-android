@@ -31,6 +31,6 @@ class PongGame {
     }
 
     public void update() {
-        ball.Update(batRect);
+        ball.Update(batRect, new PongRect(0,0,width, height));
     }
 }
