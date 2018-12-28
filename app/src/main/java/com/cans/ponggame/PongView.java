@@ -68,6 +68,9 @@ class PongView extends SurfaceView implements Runnable {
             red.setColor(Color.argb(255, 255,0,0));
             canvas.drawRect(batRect.getLeft(), batRect.getTop(), batRect.getRight(), batRect.getBottom(), red);
 
+            PongRect ballRect = this.pongGame.getBallRect();
+            canvas.drawRect(ballRect.getLeft(), ballRect.getTop(), ballRect.getRight(), ballRect.getBottom(), red);
+
             holder.unlockCanvasAndPost(canvas);
         }
     }
