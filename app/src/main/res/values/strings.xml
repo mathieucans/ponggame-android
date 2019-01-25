@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PongGame</string>
+    <string name="join_the_game">Join the game</string>
+    <string name="choose_your_game">Choose your game</string>
 </resources>
