@@ -1,6 +1,7 @@
 package com.cans.ponggame;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -81,5 +82,10 @@ public class SelectGameActivity extends AppCompatActivity {
                 this,
                 simple_spinner_item, collect);
         spinner.setAdapter(adapter);
+    }
+
+    public void onBackClicked(View view) {
+        Intent intent = new Intent(this, WelcomeActivity.class);
+        startActivity(intent);
     }
 }
